@@ -1,0 +1,72 @@
+{
+    "compounds": [
+        {
+            "name": "RASA Compound",
+            "configurations": [
+                "RASA Run Debug",
+                "RASA Run Actions debug"
+            ]
+        },
+        {
+            "name": "RASA Shell Compound",
+            "configurations": [
+                "RASA Shell Debug",
+                "RASA Run Actions debug"
+            ]
+        },
+        {
+            "name": "All Components",
+            "configurations": [
+                "Gateway Debug",
+                "RASA Run Debug",
+                "RASA Run Actions debug"
+            ]
+        }
+    ],
+    "configurations": [
+        {
+            "name": "Gateway Debug",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "whatsapp_gateway.py",
+            "cwd": "${workspaceFolder}/src/gateway",
+            "justMyCode": false
+        },
+        {
+            "name": "RASA Shell Debug",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "rasa.__main__",
+            "args": [
+                "shell"
+            ],
+            "cwd": "${workspaceFolder}/src/rasa",
+            "justMyCode": false
+        },
+        {
+            "name": "RASA Run Debug",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "rasa.__main__",
+            "justMyCode": false,
+            "args": [
+                "run",
+                "--port",
+                "5002"
+            ],
+            "cwd": "${workspaceFolder}/src/rasa"
+        },
+        {
+            "name": "RASA Run Actions debug",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "rasa.__main__",
+            "args": [
+                "run",
+                "actions"
+            ],
+            "cwd": "${workspaceFolder}/src/rasa",
+            "justMyCode": false
+        },
+    ]
+}
